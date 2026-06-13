@@ -22,6 +22,8 @@ export type {
   SearchFieldSize,
   SearchFieldValueChangeMeta,
 } from "./Formulary/SearchField";
+export { default as SelectField } from "./Formulary/SelectField";
+export type { SelectFieldOption, SelectFieldProps, SelectFieldSize } from "./Formulary/SelectField";
 export { default as QuantitySelector } from "./Formulary/QuantitySelector";
 export type {
   QuantitySelectorChangeSource,
