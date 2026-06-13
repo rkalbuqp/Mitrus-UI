@@ -1,6 +1,6 @@
 import { cva, type VariantProps } from "class-variance-authority";
 
-export const buttonStyles = cva(
+const buttonStyles = cva(
   [
     "inline-flex items-center justify-center gap-2",
     "whitespace-nowrap select-none align-middle",
@@ -64,6 +64,9 @@ export const buttonStyles = cva(
   },
 );
 
-export type ButtonStyleProps = VariantProps<typeof buttonStyles>;
-export type ButtonVariant = NonNullable<ButtonStyleProps["variant"]>;
-export type ButtonSize = NonNullable<ButtonStyleProps["size"]>;
+type ButtonStyleProps = VariantProps<typeof buttonStyles>;
+type ButtonVariant = NonNullable<ButtonStyleProps["variant"]>;
+type ButtonSize = NonNullable<ButtonStyleProps["size"]>;
+
+export { buttonStyles };
+export type { ButtonStyleProps, ButtonVariant, ButtonSize };

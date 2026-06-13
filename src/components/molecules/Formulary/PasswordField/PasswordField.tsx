@@ -5,7 +5,7 @@ import { cn } from "../../../../utils/cn";
 import FormField from "../FormField";
 import { passwordFieldRootStyles, passwordFieldToggleStyles } from "./PasswordField.styles";
 
-export interface PasswordFieldProps
+interface PasswordFieldProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "children" | "className" | "size" | "type"> {
   label?: ReactNode;
   description?: ReactNode;
@@ -94,5 +94,7 @@ const PasswordField = ({
   );
 };
 
+type PasswordFieldSize = InputSize;
+
 export default PasswordField;
-export type PasswordFieldSize = InputSize;
+export type { PasswordFieldProps, PasswordFieldSize };

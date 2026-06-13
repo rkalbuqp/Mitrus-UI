@@ -38,13 +38,12 @@ const meta = {
   },
 } satisfies Meta<typeof Avatar>;
 
-export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+const Default: Story = {};
 
-export const WithImage: Story = {
+const WithImage: Story = {
   args: {
     src: "https://i.pravatar.cc/160?img=12",
     alt: "Maria Silva",
@@ -52,32 +51,32 @@ export const WithImage: Story = {
   },
 };
 
-export const WithInitials: Story = {
+const WithInitials: Story = {
   args: {
     name: "Ana Costa",
   },
 };
 
-export const WithCustomFallback: Story = {
+const WithCustomFallback: Story = {
   args: {
     fallback: <span>AC</span>,
   },
 };
 
-export const WithIcon: Story = {
+const WithIcon: Story = {
   args: {
     icon: <Icon name="person" filled />,
   },
 };
 
-export const WithStatus: Story = {
+const WithStatus: Story = {
   args: {
     name: "Pedro Lima",
     status: "online",
   },
 };
 
-export const Sizes: Story = {
+const Sizes: Story = {
   render: () => (
     <div className="flex flex-wrap items-center gap-4">
       <Avatar name="Ana Costa" size="xs" />
@@ -90,7 +89,7 @@ export const Sizes: Story = {
   ),
 };
 
-export const Shapes: Story = {
+const Shapes: Story = {
   render: () => (
     <div className="flex items-center gap-4">
       <Avatar name="Ana Costa" shape="circle" />
@@ -99,3 +98,6 @@ export const Shapes: Story = {
     </div>
   ),
 };
+
+export default meta;
+export { Default, WithImage, WithInitials, WithCustomFallback, WithIcon, WithStatus, Sizes, Shapes };

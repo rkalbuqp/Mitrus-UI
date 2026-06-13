@@ -1,6 +1,6 @@
 import { cva, type VariantProps } from "class-variance-authority";
 
-export const tagStyles = cva(
+const tagStyles = cva(
   [
     "inline-flex items-center justify-center",
     "whitespace-nowrap align-middle",
@@ -56,7 +56,7 @@ export const tagStyles = cva(
   },
 );
 
-export const tagContentStyles = cva("font-medium", {
+const tagContentStyles = cva("font-medium", {
   variants: {
     size: {
       sm: "text-0625 leading-125",
@@ -74,6 +74,9 @@ export const tagContentStyles = cva("font-medium", {
   },
 });
 
-export type TagStyleProps = VariantProps<typeof tagStyles>;
-export type TagVariant = NonNullable<TagStyleProps["variant"]>;
-export type TagSize = NonNullable<TagStyleProps["size"]>;
+type TagStyleProps = VariantProps<typeof tagStyles>;
+type TagVariant = NonNullable<TagStyleProps["variant"]>;
+type TagSize = NonNullable<TagStyleProps["size"]>;
+
+export { tagStyles, tagContentStyles };
+export type { TagStyleProps, TagVariant, TagSize };

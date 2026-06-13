@@ -11,7 +11,7 @@ import {
   type InputSize,
 } from "./Input.styles";
 
-export interface InputProps
+interface InputProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "children" | "className" | "size"> {
   label?: ReactNode;
   description?: ReactNode;
@@ -91,5 +91,7 @@ const Input = ({
   );
 };
 
-export default Input;
 export type { InputSize };
+
+export default Input;
+export type { InputProps };

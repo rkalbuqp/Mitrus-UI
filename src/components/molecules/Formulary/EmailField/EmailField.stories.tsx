@@ -17,20 +17,19 @@ const meta = {
   },
 } satisfies Meta<typeof EmailField>;
 
-export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+const Default: Story = {};
 
-export const WithValue: Story = {
+const WithValue: Story = {
   args: {
     defaultValue: "contato@mitrus.com",
     label: "E-mail de contato",
   },
 };
 
-export const Invalid: Story = {
+const Invalid: Story = {
   args: {
     invalid: true,
     errorMessage: "Informe um e-mail valido.",
@@ -38,9 +37,12 @@ export const Invalid: Story = {
   },
 };
 
-export const Optional: Story = {
+const Optional: Story = {
   args: {
     label: "E-mail secundario",
     optional: true,
   },
 };
+
+export default meta;
+export { Default, WithValue, Invalid, Optional };

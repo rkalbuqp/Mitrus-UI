@@ -9,7 +9,7 @@ import {
   type CheckboxSize,
 } from "./Checkbox.styles";
 
-export interface CheckboxProps
+interface CheckboxProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "children" | "className" | "size" | "type"> {
   children?: ReactNode;
   description?: ReactNode;
@@ -83,5 +83,7 @@ const Checkbox = ({
   );
 };
 
-export default Checkbox;
 export type { CheckboxSize };
+
+export default Checkbox;
+export type { CheckboxProps };

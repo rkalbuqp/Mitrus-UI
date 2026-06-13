@@ -17,22 +17,24 @@ const meta = {
   },
 } satisfies Meta<typeof PasswordField>;
 
-export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+const Default: Story = {};
 
-export const Invalid: Story = {
+const Invalid: Story = {
   args: {
     invalid: true,
     errorMessage: "A senha precisa ter ao menos 8 caracteres.",
   },
 };
 
-export const Optional: Story = {
+const Optional: Story = {
   args: {
     label: "Senha secundária",
     optional: true,
   },
 };
+
+export default meta;
+export { Default, Invalid, Optional };

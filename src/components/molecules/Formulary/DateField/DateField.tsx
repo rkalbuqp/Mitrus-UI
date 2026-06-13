@@ -4,7 +4,7 @@ import { Input, Label, Text, type InputSize } from "../../../atoms";
 import { cn } from "../../../../utils/cn";
 import { dateFieldMessageStyles, dateFieldRootStyles } from "./DateField.styles";
 
-export interface DateFieldProps
+interface DateFieldProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "children" | "className" | "size" | "type"> {
   label?: ReactNode;
   description?: ReactNode;
@@ -118,5 +118,7 @@ const DateField = ({
   );
 };
 
+type DateFieldSize = InputSize;
+
 export default DateField;
-export type DateFieldSize = InputSize;
+export type { DateFieldProps, DateFieldSize };

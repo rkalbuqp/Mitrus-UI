@@ -27,12 +27,12 @@ const formatCpfValue = (value: string) => {
   return `${digits.slice(0, 3)}.${digits.slice(3, 6)}.${digits.slice(6, 9)}-${digits.slice(9, 11)}`;
 };
 
-export interface CPFFieldValueChangeMeta {
+interface CPFFieldValueChangeMeta {
   digits: string;
   isComplete: boolean;
 }
 
-export interface CPFFieldProps
+interface CPFFieldProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "children" | "className" | "size" | "type" | "value" | "defaultValue"> {
   label?: ReactNode;
   description?: ReactNode;
@@ -137,5 +137,7 @@ const CPFField = ({
   );
 };
 
+type CPFFieldSize = InputSize;
+
 export default CPFField;
-export type CPFFieldSize = InputSize;
+export type { CPFFieldValueChangeMeta, CPFFieldProps, CPFFieldSize };

@@ -3,7 +3,7 @@ import type { HTMLAttributes, ReactNode } from "react";
 import { cn } from "../../../utils/cn";
 import { tagContentStyles, tagStyles, type TagSize, type TagVariant } from "./Tag.styles";
 
-export interface TagProps extends HTMLAttributes<HTMLSpanElement> {
+interface TagProps extends HTMLAttributes<HTMLSpanElement> {
   label: ReactNode;
   variant?: TagVariant;
   size?: TagSize;
@@ -36,5 +36,7 @@ const Tag = ({
   </span>
 );
 
-export default Tag;
 export type { TagSize, TagVariant };
+
+export default Tag;
+export type { TagProps };

@@ -9,7 +9,7 @@ import {
   type LinkVariant,
 } from "./Link.styles";
 
-export interface LinkProps extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "children" | "className" | "href"> {
+interface LinkProps extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "children" | "className" | "href"> {
   href: string;
   children: ReactNode;
   variant?: LinkVariant;
@@ -48,5 +48,7 @@ const Link = ({
   </a>
 );
 
-export default Link;
 export type { LinkSize, LinkUnderline, LinkVariant };
+
+export default Link;
+export type { LinkProps };

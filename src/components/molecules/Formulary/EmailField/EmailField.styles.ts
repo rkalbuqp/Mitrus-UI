@@ -1,8 +1,8 @@
 import { cva } from "class-variance-authority";
 
-export const emailFieldRootStyles = cva("inline-flex min-w-0 flex-col gap-1.5");
+const emailFieldRootStyles = cva("inline-flex min-w-0 flex-col gap-1.5");
 
-export const emailFieldMessageStyles = cva("", {
+const emailFieldMessageStyles = cva("", {
   variants: {
     tone: {
       neutral: "text-content-neutral-secondary",
@@ -19,3 +19,5 @@ export const emailFieldMessageStyles = cva("", {
     size: "md",
   },
 });
+
+export { emailFieldRootStyles, emailFieldMessageStyles };

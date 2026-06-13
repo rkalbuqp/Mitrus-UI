@@ -4,7 +4,7 @@ import { Input, Label, Text, type InputSize } from "../../../atoms";
 import { cn } from "../../../../utils/cn";
 import { emailFieldMessageStyles, emailFieldRootStyles } from "./EmailField.styles";
 
-export interface EmailFieldProps
+interface EmailFieldProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "children" | "className" | "size" | "type"> {
   label?: ReactNode;
   description?: ReactNode;
@@ -124,5 +124,7 @@ const EmailField = ({
   );
 };
 
+type EmailFieldSize = InputSize;
+
 export default EmailField;
-export type EmailFieldSize = InputSize;
+export type { EmailFieldProps, EmailFieldSize };

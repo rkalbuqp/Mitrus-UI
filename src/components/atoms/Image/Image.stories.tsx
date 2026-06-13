@@ -36,32 +36,31 @@ const meta = {
   },
 } satisfies Meta<typeof Image>;
 
-export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+const Default: Story = {};
 
-export const WithCaption: Story = {
+const WithCaption: Story = {
   args: {
     caption: "Vista panorâmica em um dia ensolarado.",
   },
 };
 
-export const Square: Story = {
+const Square: Story = {
   args: {
     ratio: "square",
     rounded: "lg",
   },
 };
 
-export const Bordered: Story = {
+const Bordered: Story = {
   args: {
     bordered: true,
   },
 };
 
-export const FullWidth: Story = {
+const FullWidth: Story = {
   args: {
     fullWidth: true,
     size: "full",
@@ -75,7 +74,7 @@ export const FullWidth: Story = {
   ),
 };
 
-export const Fits: Story = {
+const Fits: Story = {
   render: () => (
     <div className="grid grid-cols-2 gap-4">
       <Image
@@ -93,3 +92,6 @@ export const Fits: Story = {
     </div>
   ),
 };
+
+export default meta;
+export { Default, WithCaption, Square, Bordered, FullWidth, Fits };

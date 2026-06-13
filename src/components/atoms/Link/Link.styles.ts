@@ -1,6 +1,6 @@
 import { cva, type VariantProps } from "class-variance-authority";
 
-export const linkStyles = cva(
+const linkStyles = cva(
   [
     "inline-flex w-fit items-center gap-1.5",
     "align-middle",
@@ -30,7 +30,7 @@ export const linkStyles = cva(
   },
 );
 
-export const linkContentStyles = cva("font-medium", {
+const linkContentStyles = cva("font-medium", {
   variants: {
     size: {
       sm: "text-087 leading-125",
@@ -43,7 +43,10 @@ export const linkContentStyles = cva("font-medium", {
   },
 });
 
-export type LinkStyleProps = VariantProps<typeof linkStyles>;
-export type LinkVariant = NonNullable<LinkStyleProps["variant"]>;
-export type LinkSize = NonNullable<VariantProps<typeof linkContentStyles>["size"]>;
-export type LinkUnderline = NonNullable<LinkStyleProps["underline"]>;
+type LinkStyleProps = VariantProps<typeof linkStyles>;
+type LinkVariant = NonNullable<LinkStyleProps["variant"]>;
+type LinkSize = NonNullable<VariantProps<typeof linkContentStyles>["size"]>;
+type LinkUnderline = NonNullable<LinkStyleProps["underline"]>;
+
+export { linkStyles, linkContentStyles };
+export type { LinkStyleProps, LinkVariant, LinkSize, LinkUnderline };

@@ -31,34 +31,33 @@ const meta = {
   },
 } satisfies Meta<typeof Icon>;
 
-export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+const Default: Story = {};
 
-export const Rounded: Story = {
+const Rounded: Story = {
   args: {
     name: "favorite",
     variant: "rounded",
   },
 };
 
-export const Sharp: Story = {
+const Sharp: Story = {
   args: {
     name: "bolt",
     variant: "sharp",
   },
 };
 
-export const Filled: Story = {
+const Filled: Story = {
   args: {
     name: "star",
     filled: true,
   },
 };
 
-export const Sizes: Story = {
+const Sizes: Story = {
   render: () => (
     <div className="flex items-center gap-4 text-content-neutral-primary">
       <Icon name="home" size="xs" />
@@ -70,7 +69,7 @@ export const Sizes: Story = {
   ),
 };
 
-export const CommonIcons: Story = {
+const CommonIcons: Story = {
   render: () => (
     <div className="flex items-center gap-4 text-content-neutral-primary">
       <Icon name="arrow_back" />
@@ -82,3 +81,6 @@ export const CommonIcons: Story = {
     </div>
   ),
 };
+
+export default meta;
+export { Default, Rounded, Sharp, Filled, Sizes, CommonIcons };

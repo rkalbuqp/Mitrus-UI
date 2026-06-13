@@ -22,28 +22,30 @@ const meta = {
   },
 } satisfies Meta<typeof CheckboxField>;
 
-export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+const Default: Story = {};
 
-export const Indeterminate: Story = {
+const Indeterminate: Story = {
   args: {
     defaultValue: ["analytics"],
   },
 };
 
-export const AllChecked: Story = {
+const AllChecked: Story = {
   args: {
     defaultValue: ["analytics", "marketing"],
   },
 };
 
-export const Standalone: Story = {
+const Standalone: Story = {
   args: {
     label: "Aceito os termos de uso",
     description: "Necessario para continuar.",
     items: [],
   },
 };
+
+export default meta;
+export { Default, Indeterminate, AllChecked, Standalone };

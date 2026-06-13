@@ -17,29 +17,31 @@ const meta = {
   },
 } satisfies Meta<typeof PhoneField>;
 
-export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+const Default: Story = {};
 
-export const Brazil: Story = {
+const Brazil: Story = {
   args: {
     defaultCountry: "BR",
     defaultValue: "11912345678",
   },
 };
 
-export const UnitedStates: Story = {
+const UnitedStates: Story = {
   args: {
     defaultCountry: "US",
     defaultValue: "2025550123",
   },
 };
 
-export const Invalid: Story = {
+const Invalid: Story = {
   args: {
     invalid: true,
     errorMessage: "Informe um telefone válido.",
   },
 };
+
+export default meta;
+export { Default, Brazil, UnitedStates, Invalid };

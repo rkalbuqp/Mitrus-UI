@@ -3,7 +3,7 @@ import type { CSSProperties, HTMLAttributes } from "react";
 import { cn } from "../../../utils/cn";
 import { skeletonStyles, type SkeletonSize, type SkeletonVariant } from "./Skeleton.styles";
 
-export interface SkeletonProps extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
+interface SkeletonProps extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
   variant?: SkeletonVariant;
   size?: SkeletonSize;
   animated?: boolean;
@@ -55,5 +55,7 @@ const Skeleton = ({
   );
 };
 
-export default Skeleton;
 export type { SkeletonSize, SkeletonVariant };
+
+export default Skeleton;
+export type { SkeletonProps };

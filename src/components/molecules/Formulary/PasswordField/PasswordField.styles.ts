@@ -1,8 +1,8 @@
 import { cva } from "class-variance-authority";
 
-export const passwordFieldRootStyles = cva("inline-flex min-w-0 flex-col gap-1.5");
+const passwordFieldRootStyles = cva("inline-flex min-w-0 flex-col gap-1.5");
 
-export const passwordFieldToggleStyles = cva(
+const passwordFieldToggleStyles = cva(
   [
     "inline-flex items-center justify-center rounded-md border border-transparent bg-transparent px-2",
     "text-content-neutral-secondary transition-colors duration-200 outline-none",
@@ -24,3 +24,5 @@ export const passwordFieldToggleStyles = cva(
     },
   },
 );
+
+export { passwordFieldRootStyles, passwordFieldToggleStyles };

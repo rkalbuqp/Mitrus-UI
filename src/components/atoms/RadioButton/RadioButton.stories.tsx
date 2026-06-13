@@ -25,41 +25,40 @@ const meta = {
   },
 } satisfies Meta<typeof RadioButton>;
 
-export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+const Default: Story = {};
 
-export const Checked: Story = {
+const Checked: Story = {
   args: {
     children: "Selecionado",
     defaultChecked: true,
   },
 };
 
-export const WithDescription: Story = {
+const WithDescription: Story = {
   args: {
     children: "Plano Pro",
     description: "Opção recomendada para times em crescimento.",
   },
 };
 
-export const Disabled: Story = {
+const Disabled: Story = {
   args: {
     children: "Desabilitado",
     disabled: true,
   },
 };
 
-export const Invalid: Story = {
+const Invalid: Story = {
   args: {
     children: "Campo obrigatório",
     invalid: true,
   },
 };
 
-export const Sizes: Story = {
+const Sizes: Story = {
   render: () => (
     <div className="flex flex-col gap-4">
       <RadioButton name="sizes" size="sm" value="sm">
@@ -75,7 +74,7 @@ export const Sizes: Story = {
   ),
 };
 
-export const Group: Story = {
+const Group: Story = {
   render: () => (
     <fieldset className="flex flex-col gap-4">
       <legend className="text-100 font-medium text-content-neutral-primary">Escolha um plano</legend>
@@ -91,3 +90,6 @@ export const Group: Story = {
     </fieldset>
   ),
 };
+
+export default meta;
+export { Default, Checked, WithDescription, Disabled, Invalid, Sizes, Group };

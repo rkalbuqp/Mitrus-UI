@@ -31,26 +31,28 @@ const meta = {
   },
 } satisfies Meta<typeof Input>;
 
-export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+const Default: Story = {};
 
-export const Invalid: Story = {
+const Invalid: Story = {
   args: {
     invalid: true,
   },
 };
 
-export const Disabled: Story = {
+const Disabled: Story = {
   args: {
     disabled: true,
   },
 };
 
-export const WithAdornment: Story = {
+const WithAdornment: Story = {
   args: {
     endAdornment: <button type="button">OK</button>,
   },
 };
+
+export default meta;
+export { Default, Invalid, Disabled, WithAdornment };

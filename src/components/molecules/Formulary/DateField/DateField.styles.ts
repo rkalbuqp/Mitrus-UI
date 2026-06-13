@@ -1,8 +1,8 @@
 import { cva } from "class-variance-authority";
 
-export const dateFieldRootStyles = cva("inline-flex min-w-0 flex-col gap-1.5");
+const dateFieldRootStyles = cva("inline-flex min-w-0 flex-col gap-1.5");
 
-export const dateFieldMessageStyles = cva("", {
+const dateFieldMessageStyles = cva("", {
   variants: {
     tone: {
       neutral: "text-content-neutral-secondary",
@@ -19,3 +19,5 @@ export const dateFieldMessageStyles = cva("", {
     size: "md",
   },
 });
+
+export { dateFieldRootStyles, dateFieldMessageStyles };

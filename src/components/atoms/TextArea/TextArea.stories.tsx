@@ -31,31 +31,30 @@ const meta = {
   },
 } satisfies Meta<typeof TextArea>;
 
-export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+const Default: Story = {};
 
-export const WithValue: Story = {
+const WithValue: Story = {
   args: {
     defaultValue: "Mensagem inicial do campo.",
   },
 };
 
-export const Invalid: Story = {
+const Invalid: Story = {
   args: {
     invalid: true,
   },
 };
 
-export const Disabled: Story = {
+const Disabled: Story = {
   args: {
     disabled: true,
   },
 };
 
-export const FullWidth: Story = {
+const FullWidth: Story = {
   args: {
     fullWidth: true,
   },
@@ -66,7 +65,7 @@ export const FullWidth: Story = {
   ),
 };
 
-export const ResizeModes: Story = {
+const ResizeModes: Story = {
   render: () => (
     <div className="flex flex-col gap-4">
       <TextArea label="No resize" placeholder="Sem resize" resize="none" />
@@ -76,3 +75,6 @@ export const ResizeModes: Story = {
     </div>
   ),
 };
+
+export default meta;
+export { Default, WithValue, Invalid, Disabled, FullWidth, ResizeModes };

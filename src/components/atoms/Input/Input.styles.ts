@@ -1,10 +1,10 @@
 import { cva, type VariantProps } from "class-variance-authority";
 
-export const inputRootStyles = cva("inline-flex min-w-0 flex-col gap-1.5");
+const inputRootStyles = cva("inline-flex min-w-0 flex-col gap-1.5");
 
-export const inputControlStyles = cva("relative inline-flex min-w-0 items-center");
+const inputControlStyles = cva("relative inline-flex min-w-0 items-center");
 
-export const inputFieldStyles = cva(
+const inputFieldStyles = cva(
   [
     "rounded-md border bg-background-primary text-content-neutral-primary",
     "transition-colors duration-200 outline-none",
@@ -43,7 +43,7 @@ export const inputFieldStyles = cva(
   },
 );
 
-export const inputAdornmentStyles = cva(
+const inputAdornmentStyles = cva(
   "absolute right-2 inline-flex items-center justify-center",
   {
     variants: {
@@ -59,7 +59,7 @@ export const inputAdornmentStyles = cva(
   },
 );
 
-export const inputLabelStyles = cva("font-medium text-content-neutral-primary", {
+const inputLabelStyles = cva("font-medium text-content-neutral-primary", {
   variants: {
     size: {
       sm: "text-087 leading-125",
@@ -72,7 +72,7 @@ export const inputLabelStyles = cva("font-medium text-content-neutral-primary", 
   },
 });
 
-export const inputDescriptionStyles = cva("text-content-neutral-secondary", {
+const inputDescriptionStyles = cva("text-content-neutral-secondary", {
   variants: {
     size: {
       sm: "text-075 leading-125",
@@ -85,5 +85,8 @@ export const inputDescriptionStyles = cva("text-content-neutral-secondary", {
   },
 });
 
-export type InputFieldStyleProps = VariantProps<typeof inputFieldStyles>;
-export type InputSize = NonNullable<InputFieldStyleProps["size"]>;
+type InputFieldStyleProps = VariantProps<typeof inputFieldStyles>;
+type InputSize = NonNullable<InputFieldStyleProps["size"]>;
+
+export { inputRootStyles, inputControlStyles, inputFieldStyles, inputAdornmentStyles, inputLabelStyles, inputDescriptionStyles };
+export type { InputFieldStyleProps, InputSize };

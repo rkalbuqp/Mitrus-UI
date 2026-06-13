@@ -25,27 +25,26 @@ const meta = {
   },
 } satisfies Meta<typeof Tag>;
 
-export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+const Default: Story = {};
 
-export const Numeric: Story = {
+const Numeric: Story = {
   args: {
     label: 12,
     numeric: true,
   },
 };
 
-export const RoundedOff: Story = {
+const RoundedOff: Story = {
   args: {
     label: "Sem pill",
     rounded: false,
   },
 };
 
-export const Variants: Story = {
+const Variants: Story = {
   render: () => (
     <div className="flex flex-wrap items-center gap-3">
       <Tag label="Neutral" variant="neutral" />
@@ -58,7 +57,7 @@ export const Variants: Story = {
   ),
 };
 
-export const Sizes: Story = {
+const Sizes: Story = {
   render: () => (
     <div className="flex flex-wrap items-center gap-3">
       <Tag label="Small" size="sm" />
@@ -67,3 +66,6 @@ export const Sizes: Story = {
     </div>
   ),
 };
+
+export default meta;
+export { Default, Numeric, RoundedOff, Variants, Sizes };

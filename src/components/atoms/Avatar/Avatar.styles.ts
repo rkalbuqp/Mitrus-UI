@@ -1,6 +1,6 @@
 import { cva, type VariantProps } from "class-variance-authority";
 
-export const avatarStyles = cva(
+const avatarStyles = cva(
   [
     "relative inline-flex shrink-0 items-center justify-center overflow-hidden",
     "bg-surface-neutral-secondary text-content-neutral-primary",
@@ -34,7 +34,7 @@ export const avatarStyles = cva(
   },
 );
 
-export const avatarFallbackStyles = cva(
+const avatarFallbackStyles = cva(
   "inline-flex h-full w-full items-center justify-center bg-fill-neutral-default font-semibold uppercase text-content-neutral-primary",
   {
     variants: {
@@ -53,7 +53,7 @@ export const avatarFallbackStyles = cva(
   },
 );
 
-export const avatarStatusStyles = cva("absolute block rounded-full border-2 border-background-primary", {
+const avatarStatusStyles = cva("absolute block rounded-full border-2 border-background-primary", {
   variants: {
     size: {
       xs: "bottom-0 right-0 h-2 w-2",
@@ -76,7 +76,10 @@ export const avatarStatusStyles = cva("absolute block rounded-full border-2 bord
   },
 });
 
-export type AvatarStyleProps = VariantProps<typeof avatarStyles>;
-export type AvatarSize = NonNullable<AvatarStyleProps["size"]>;
-export type AvatarShape = NonNullable<AvatarStyleProps["shape"]>;
-export type AvatarStatus = NonNullable<VariantProps<typeof avatarStatusStyles>["status"]>;
+type AvatarStyleProps = VariantProps<typeof avatarStyles>;
+type AvatarSize = NonNullable<AvatarStyleProps["size"]>;
+type AvatarShape = NonNullable<AvatarStyleProps["shape"]>;
+type AvatarStatus = NonNullable<VariantProps<typeof avatarStatusStyles>["status"]>;
+
+export { avatarStyles, avatarFallbackStyles, avatarStatusStyles };
+export type { AvatarStyleProps, AvatarSize, AvatarShape, AvatarStatus };

@@ -3,7 +3,7 @@ import type { ButtonHTMLAttributes, HTMLAttributes, ReactNode } from "react";
 import { cn } from "../../../utils/cn";
 import { buttonStyles, type ButtonSize, type ButtonVariant } from "./Button.styles";
 
-export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   size?: ButtonSize;
   loading?: boolean;
   rounded?: boolean;
@@ -60,5 +60,7 @@ const Button = ({
   </button>
 );
 
-export default Button;
 export type { ButtonSize, ButtonVariant };
+
+export default Button;
+export type { ButtonProps };

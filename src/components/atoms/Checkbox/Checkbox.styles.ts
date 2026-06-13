@@ -1,6 +1,6 @@
 import { cva, type VariantProps } from "class-variance-authority";
 
-export const checkboxRootStyles = cva("inline-flex w-fit select-none items-start gap-3", {
+const checkboxRootStyles = cva("inline-flex w-fit select-none items-start gap-3", {
   variants: {
     disabled: {
       true: "cursor-not-allowed opacity-60",
@@ -12,7 +12,7 @@ export const checkboxRootStyles = cva("inline-flex w-fit select-none items-start
   },
 });
 
-export const checkboxInputStyles = cva(
+const checkboxInputStyles = cva(
   [
     "mt-0.5 shrink-0 rounded border border-border-neutral-default bg-background-primary",
     "transition-colors duration-200",
@@ -42,7 +42,7 @@ export const checkboxInputStyles = cva(
   },
 );
 
-export const checkboxLabelStyles = cva("font-medium text-content-neutral-primary", {
+const checkboxLabelStyles = cva("font-medium text-content-neutral-primary", {
   variants: {
     size: {
       sm: "text-087 leading-125",
@@ -55,7 +55,7 @@ export const checkboxLabelStyles = cva("font-medium text-content-neutral-primary
   },
 });
 
-export const checkboxDescriptionStyles = cva("text-content-neutral-secondary", {
+const checkboxDescriptionStyles = cva("text-content-neutral-secondary", {
   variants: {
     size: {
       sm: "text-075 leading-125",
@@ -68,5 +68,8 @@ export const checkboxDescriptionStyles = cva("text-content-neutral-secondary", {
   },
 });
 
-export type CheckboxStyleProps = VariantProps<typeof checkboxInputStyles>;
-export type CheckboxSize = NonNullable<CheckboxStyleProps["size"]>;
+type CheckboxStyleProps = VariantProps<typeof checkboxInputStyles>;
+type CheckboxSize = NonNullable<CheckboxStyleProps["size"]>;
+
+export { checkboxRootStyles, checkboxInputStyles, checkboxLabelStyles, checkboxDescriptionStyles };
+export type { CheckboxStyleProps, CheckboxSize };

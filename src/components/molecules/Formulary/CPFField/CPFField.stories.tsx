@@ -16,27 +16,29 @@ const meta = {
   },
 } satisfies Meta<typeof CPFField>;
 
-export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+const Default: Story = {};
 
-export const WithValue: Story = {
+const WithValue: Story = {
   args: {
     defaultValue: "12345678901",
   },
 };
 
-export const Invalid: Story = {
+const Invalid: Story = {
   args: {
     invalid: true,
     errorMessage: "Informe um CPF válido.",
   },
 };
 
-export const Optional: Story = {
+const Optional: Story = {
   args: {
     optional: true,
   },
 };
+
+export default meta;
+export { Default, WithValue, Invalid, Optional };

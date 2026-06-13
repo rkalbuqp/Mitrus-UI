@@ -67,7 +67,7 @@ const buildCountryOptions = () =>
       return left.value.localeCompare(right.value);
     });
 
-export interface PhoneFieldValueChangeMeta {
+interface PhoneFieldValueChangeMeta {
   country: CountryCode;
   dialCode: string;
   nationalNumber: string;
@@ -75,7 +75,7 @@ export interface PhoneFieldValueChangeMeta {
   e164Value?: string;
 }
 
-export interface PhoneFieldProps
+interface PhoneFieldProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "children" | "className" | "size" | "type" | "value" | "defaultValue"> {
   label?: ReactNode;
   description?: ReactNode;
@@ -230,6 +230,8 @@ const PhoneField = ({
   );
 };
 
+type PhoneFieldCountry = CountryCode;
+type PhoneFieldSize = InputSize;
+
 export default PhoneField;
-export type PhoneFieldCountry = CountryCode;
-export type PhoneFieldSize = InputSize;
+export type { PhoneFieldValueChangeMeta, PhoneFieldProps, PhoneFieldCountry, PhoneFieldSize };

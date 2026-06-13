@@ -17,11 +17,10 @@ const meta = {
   },
 } satisfies Meta<typeof FormField>;
 
-export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+const Default: Story = {
   render: (args) => (
     <FormField {...args}>
       {(fieldProps) => <Input {...fieldProps} className="gap-0" inputClassName="" placeholder="Digite aqui" />}
@@ -29,7 +28,7 @@ export const Default: Story = {
   ),
 };
 
-export const Invalid: Story = {
+const Invalid: Story = {
   args: {
     invalid: true,
     errorMessage: "Este campo é obrigatório.",
@@ -41,7 +40,7 @@ export const Invalid: Story = {
   ),
 };
 
-export const Optional: Story = {
+const Optional: Story = {
   args: {
     optional: true,
     label: "Complemento",
@@ -52,3 +51,6 @@ export const Optional: Story = {
     </FormField>
   ),
 };
+
+export default meta;
+export { Default, Invalid, Optional };

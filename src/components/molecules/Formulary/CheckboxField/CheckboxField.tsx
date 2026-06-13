@@ -5,14 +5,14 @@ import { cn } from "../../../../utils/cn";
 
 const normalizeValues = (values: string[]) => Array.from(new Set(values));
 
-export interface CheckboxFieldItem {
+interface CheckboxFieldItem {
   id: string;
   label: ReactNode;
   description?: ReactNode;
   disabled?: boolean;
 }
 
-export interface CheckboxFieldProps extends Omit<HTMLAttributes<HTMLDivElement>, "children" | "onChange"> {
+interface CheckboxFieldProps extends Omit<HTMLAttributes<HTMLDivElement>, "children" | "onChange"> {
   label: ReactNode;
   description?: ReactNode;
   items?: CheckboxFieldItem[];
@@ -156,3 +156,4 @@ const CheckboxField = ({
 };
 
 export default CheckboxField;
+export type { CheckboxFieldItem, CheckboxFieldProps };

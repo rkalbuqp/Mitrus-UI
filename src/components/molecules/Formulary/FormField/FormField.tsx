@@ -4,7 +4,7 @@ import { Label, Text, type InputSize } from "../../../atoms";
 import { cn } from "../../../../utils/cn";
 import { formFieldControlStyles, formFieldMessageStyles, formFieldRootStyles } from "./FormField.styles";
 
-export interface FormFieldRenderProps {
+interface FormFieldRenderProps {
   id: string;
   "aria-describedby"?: string;
   "aria-labelledby"?: string;
@@ -13,7 +13,7 @@ export interface FormFieldRenderProps {
   required?: boolean;
 }
 
-export interface FormFieldProps extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
+interface FormFieldProps extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
   label?: ReactNode;
   description?: ReactNode;
   errorMessage?: ReactNode;
@@ -126,3 +126,4 @@ const FormField = ({
 };
 
 export default FormField;
+export type { FormFieldRenderProps, FormFieldProps };
