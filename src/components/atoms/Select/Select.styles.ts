@@ -1,8 +1,8 @@
 import { cva, type VariantProps } from "class-variance-authority";
 
-export const selectRootStyles = cva("inline-flex min-w-0 flex-col gap-1.5");
+const selectRootStyles = cva("inline-flex min-w-0 flex-col gap-1.5");
 
-export const selectFieldStyles = cva(
+const selectFieldStyles = cva(
   [
     "relative inline-flex items-center overflow-hidden rounded-md border bg-background-primary",
     "transition-colors duration-200",
@@ -39,7 +39,7 @@ export const selectFieldStyles = cva(
   },
 );
 
-export const selectElementStyles = cva(
+const selectElementStyles = cva(
   [
     "w-full appearance-none bg-transparent text-content-neutral-primary outline-none",
     "pr-10 pl-3 font-medium",
@@ -59,7 +59,7 @@ export const selectElementStyles = cva(
   },
 );
 
-export const selectIconStyles = cva(
+const selectIconStyles = cva(
   "pointer-events-none absolute right-3 inline-flex items-center justify-center text-content-neutral-secondary",
   {
     variants: {
@@ -75,7 +75,7 @@ export const selectIconStyles = cva(
   },
 );
 
-export const selectLabelStyles = cva("font-medium text-content-neutral-primary", {
+const selectLabelStyles = cva("font-medium text-content-neutral-primary", {
   variants: {
     size: {
       sm: "text-087 leading-125",
@@ -88,7 +88,7 @@ export const selectLabelStyles = cva("font-medium text-content-neutral-primary",
   },
 });
 
-export const selectDescriptionStyles = cva("text-content-neutral-secondary", {
+const selectDescriptionStyles = cva("text-content-neutral-secondary", {
   variants: {
     size: {
       sm: "text-075 leading-125",
@@ -101,5 +101,8 @@ export const selectDescriptionStyles = cva("text-content-neutral-secondary", {
   },
 });
 
-export type SelectFieldStyleProps = VariantProps<typeof selectFieldStyles>;
-export type SelectSize = NonNullable<SelectFieldStyleProps["size"]>;
+type SelectFieldStyleProps = VariantProps<typeof selectFieldStyles>;
+type SelectSize = NonNullable<SelectFieldStyleProps["size"]>;
+
+export { selectRootStyles, selectFieldStyles, selectElementStyles, selectIconStyles, selectLabelStyles, selectDescriptionStyles };
+export type { SelectFieldStyleProps, SelectSize };

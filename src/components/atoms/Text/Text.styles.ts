@@ -1,6 +1,6 @@
 import { cva, type VariantProps } from "class-variance-authority";
 
-export const textRootStyles = cva("", {
+const textRootStyles = cva("", {
   variants: {
     tone: {
       primary: "text-content-neutral-primary",
@@ -29,7 +29,7 @@ export const textRootStyles = cva("", {
   },
 });
 
-export const textContentStyles = cva("", {
+const textContentStyles = cva("", {
   variants: {
     size: {
       xs: "text-075 leading-125",
@@ -61,9 +61,12 @@ export const textContentStyles = cva("", {
   },
 });
 
-export type TextRootStyleProps = VariantProps<typeof textRootStyles>;
-export type TextContentStyleProps = VariantProps<typeof textContentStyles>;
-export type TextTone = NonNullable<TextRootStyleProps["tone"]>;
-export type TextAlign = NonNullable<TextRootStyleProps["align"]>;
-export type TextSize = NonNullable<TextContentStyleProps["size"]>;
-export type TextWeight = NonNullable<TextContentStyleProps["weight"]>;
+type TextRootStyleProps = VariantProps<typeof textRootStyles>;
+type TextContentStyleProps = VariantProps<typeof textContentStyles>;
+type TextTone = NonNullable<TextRootStyleProps["tone"]>;
+type TextAlign = NonNullable<TextRootStyleProps["align"]>;
+type TextSize = NonNullable<TextContentStyleProps["size"]>;
+type TextWeight = NonNullable<TextContentStyleProps["weight"]>;
+
+export { textRootStyles, textContentStyles };
+export type { TextRootStyleProps, TextContentStyleProps, TextTone, TextAlign, TextSize, TextWeight };

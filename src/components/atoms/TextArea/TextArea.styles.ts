@@ -1,8 +1,8 @@
 import { cva, type VariantProps } from "class-variance-authority";
 
-export const textAreaRootStyles = cva("inline-flex min-w-0 flex-col gap-1.5");
+const textAreaRootStyles = cva("inline-flex min-w-0 flex-col gap-1.5");
 
-export const textAreaFieldStyles = cva(
+const textAreaFieldStyles = cva(
   [
     "w-full rounded-md border bg-background-primary text-content-neutral-primary",
     "transition-colors duration-200 outline-none",
@@ -43,7 +43,7 @@ export const textAreaFieldStyles = cva(
   },
 );
 
-export const textAreaLabelStyles = cva("font-medium text-content-neutral-primary", {
+const textAreaLabelStyles = cva("font-medium text-content-neutral-primary", {
   variants: {
     size: {
       sm: "text-087 leading-125",
@@ -56,7 +56,7 @@ export const textAreaLabelStyles = cva("font-medium text-content-neutral-primary
   },
 });
 
-export const textAreaDescriptionStyles = cva("text-content-neutral-secondary", {
+const textAreaDescriptionStyles = cva("text-content-neutral-secondary", {
   variants: {
     size: {
       sm: "text-075 leading-125",
@@ -69,6 +69,9 @@ export const textAreaDescriptionStyles = cva("text-content-neutral-secondary", {
   },
 });
 
-export type TextAreaFieldStyleProps = VariantProps<typeof textAreaFieldStyles>;
-export type TextAreaSize = NonNullable<TextAreaFieldStyleProps["size"]>;
-export type TextAreaResize = NonNullable<TextAreaFieldStyleProps["resize"]>;
+type TextAreaFieldStyleProps = VariantProps<typeof textAreaFieldStyles>;
+type TextAreaSize = NonNullable<TextAreaFieldStyleProps["size"]>;
+type TextAreaResize = NonNullable<TextAreaFieldStyleProps["resize"]>;
+
+export { textAreaRootStyles, textAreaFieldStyles, textAreaLabelStyles, textAreaDescriptionStyles };
+export type { TextAreaFieldStyleProps, TextAreaSize, TextAreaResize };

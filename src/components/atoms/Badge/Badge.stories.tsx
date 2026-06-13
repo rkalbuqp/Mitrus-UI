@@ -22,13 +22,12 @@ const meta = {
   },
 } satisfies Meta<typeof Badge>;
 
-export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+const Default: Story = {};
 
-export const SolidSuccess: Story = {
+const SolidSuccess: Story = {
   args: {
     children: "Ativo",
     variant: "success",
@@ -36,7 +35,7 @@ export const SolidSuccess: Story = {
   },
 };
 
-export const WithDot: Story = {
+const WithDot: Story = {
   args: {
     children: "Online",
     variant: "success",
@@ -44,7 +43,7 @@ export const WithDot: Story = {
   },
 };
 
-export const WithIcons: Story = {
+const WithIcons: Story = {
   args: {
     children: "Novo",
     variant: "accent",
@@ -54,7 +53,7 @@ export const WithIcons: Story = {
   },
 };
 
-export const Sizes: Story = {
+const Sizes: Story = {
   render: () => (
     <div className="flex items-center gap-3">
       <Badge size="sm">Small</Badge>
@@ -64,7 +63,7 @@ export const Sizes: Story = {
   ),
 };
 
-export const Variants: Story = {
+const Variants: Story = {
   render: () => (
     <div className="flex flex-wrap items-center gap-3">
       <Badge variant="neutral">Neutral</Badge>
@@ -78,3 +77,6 @@ export const Variants: Story = {
     </div>
   ),
 };
+
+export default meta;
+export { Default, SolidSuccess, WithDot, WithIcons, Sizes, Variants };

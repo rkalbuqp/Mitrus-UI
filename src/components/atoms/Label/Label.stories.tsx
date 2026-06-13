@@ -23,41 +23,40 @@ const meta = {
   },
 } satisfies Meta<typeof Label>;
 
-export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+const Default: Story = {};
 
-export const Required: Story = {
+const Required: Story = {
   args: {
     children: "Senha",
     required: true,
   },
 };
 
-export const Optional: Story = {
+const Optional: Story = {
   args: {
     children: "Complemento",
     optional: true,
   },
 };
 
-export const Disabled: Story = {
+const Disabled: Story = {
   args: {
     children: "Campo desabilitado",
     disabled: true,
   },
 };
 
-export const SrOnly: Story = {
+const SrOnly: Story = {
   args: {
     children: "Busca",
     srOnly: true,
   },
 };
 
-export const Sizes: Story = {
+const Sizes: Story = {
   render: () => (
     <div className="flex flex-col gap-3">
       <Label size="sm">Small</Label>
@@ -66,3 +65,6 @@ export const Sizes: Story = {
     </div>
   ),
 };
+
+export default meta;
+export { Default, Required, Optional, Disabled, SrOnly, Sizes };

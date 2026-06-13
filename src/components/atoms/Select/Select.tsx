@@ -12,13 +12,13 @@ import {
   type SelectSize,
 } from "./Select.styles";
 
-export interface SelectOption {
+interface SelectOption {
   label: ReactNode;
   value: string;
   disabled?: boolean;
 }
 
-export interface SelectProps
+interface SelectProps
   extends Omit<SelectHTMLAttributes<HTMLSelectElement>, "children" | "className" | "size"> {
   label?: ReactNode;
   description?: ReactNode;
@@ -117,5 +117,7 @@ const Select = ({
   );
 };
 
-export default Select;
 export type { SelectSize };
+
+export default Select;
+export type { SelectOption, SelectProps };

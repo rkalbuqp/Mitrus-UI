@@ -1,6 +1,6 @@
 import { cva, type VariantProps } from "class-variance-authority";
 
-export const skeletonStyles = cva(
+const skeletonStyles = cva(
   [
     "inline-flex shrink-0 bg-surface-neutral-secondary",
     "relative overflow-hidden",
@@ -82,6 +82,9 @@ export const skeletonStyles = cva(
   },
 );
 
-export type SkeletonStyleProps = VariantProps<typeof skeletonStyles>;
-export type SkeletonVariant = NonNullable<SkeletonStyleProps["variant"]>;
-export type SkeletonSize = NonNullable<SkeletonStyleProps["size"]>;
+type SkeletonStyleProps = VariantProps<typeof skeletonStyles>;
+type SkeletonVariant = NonNullable<SkeletonStyleProps["variant"]>;
+type SkeletonSize = NonNullable<SkeletonStyleProps["size"]>;
+
+export { skeletonStyles };
+export type { SkeletonStyleProps, SkeletonVariant, SkeletonSize };

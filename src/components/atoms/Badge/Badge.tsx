@@ -9,7 +9,7 @@ import {
   type BadgeVariant,
 } from "./Badge.styles";
 
-export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
+interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
   children: ReactNode;
   variant?: BadgeVariant;
   appearance?: BadgeAppearance;
@@ -51,5 +51,7 @@ const Badge = ({
   </span>
 );
 
-export default Badge;
 export type { BadgeAppearance, BadgeSize, BadgeVariant };
+
+export default Badge;
+export type { BadgeProps };

@@ -94,5 +94,6 @@ const Placements: Story = {
   ),
 };
 
-export default meta;
 export { Default, Open, Placements, WithButton, WithIconTrigger };
+
+export default meta;

@@ -1,6 +1,6 @@
 import { cva, type VariantProps } from "class-variance-authority";
 
-export const iconStyles = cva(
+const iconStyles = cva(
   [
     "inline-flex shrink-0 select-none items-center justify-center",
     "leading-none align-middle text-current",
@@ -27,6 +27,9 @@ export const iconStyles = cva(
   },
 );
 
-export type IconStyleProps = VariantProps<typeof iconStyles>;
-export type IconVariant = NonNullable<IconStyleProps["variant"]>;
-export type IconSize = NonNullable<IconStyleProps["size"]>;
+type IconStyleProps = VariantProps<typeof iconStyles>;
+type IconVariant = NonNullable<IconStyleProps["variant"]>;
+type IconSize = NonNullable<IconStyleProps["size"]>;
+
+export { iconStyles };
+export type { IconStyleProps, IconVariant, IconSize };

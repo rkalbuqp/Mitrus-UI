@@ -19,7 +19,7 @@ type TooltipTriggerProps = {
   "aria-describedby"?: string;
 };
 
-export interface TooltipProps extends Omit<HTMLAttributes<HTMLSpanElement>, "children" | "content"> {
+interface TooltipProps extends Omit<HTMLAttributes<HTMLSpanElement>, "children" | "content"> {
   children: ReactElement<TooltipTriggerProps>;
   content: ReactNode;
   placement?: TooltipPlacement;
@@ -71,5 +71,7 @@ const Tooltip = ({
   );
 };
 
-export default Tooltip;
 export type { TooltipPlacement, TooltipSize };
+
+export default Tooltip;
+export type { TooltipProps };

@@ -11,7 +11,7 @@ import {
   type RadioButtonSize,
 } from "./RadioButton.styles";
 
-export interface RadioButtonProps
+interface RadioButtonProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "children" | "className" | "size" | "type"> {
   children?: ReactNode;
   description?: ReactNode;
@@ -88,5 +88,7 @@ const RadioButton = ({
   );
 };
 
-export default RadioButton;
 export type { RadioButtonSize };
+
+export default RadioButton;
+export type { RadioButtonProps };

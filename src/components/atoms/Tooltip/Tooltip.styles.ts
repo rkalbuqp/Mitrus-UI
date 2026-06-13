@@ -1,8 +1,8 @@
 import { cva, type VariantProps } from "class-variance-authority";
 
-export const tooltipRootStyles = cva("relative inline-flex w-fit");
+const tooltipRootStyles = cva("relative inline-flex w-fit");
 
-export const tooltipContentStyles = cva(
+const tooltipContentStyles = cva(
   [
     "pointer-events-none absolute z-20 inline-flex max-w-64 whitespace-normal rounded-md",
     "bg-fill-inverse-default text-content-inverse shadow-sm",
@@ -34,6 +34,9 @@ export const tooltipContentStyles = cva(
   },
 );
 
-export type TooltipContentStyleProps = VariantProps<typeof tooltipContentStyles>;
-export type TooltipPlacement = NonNullable<TooltipContentStyleProps["placement"]>;
-export type TooltipSize = NonNullable<TooltipContentStyleProps["size"]>;
+type TooltipContentStyleProps = VariantProps<typeof tooltipContentStyles>;
+type TooltipPlacement = NonNullable<TooltipContentStyleProps["placement"]>;
+type TooltipSize = NonNullable<TooltipContentStyleProps["size"]>;
+
+export { tooltipRootStyles, tooltipContentStyles };
+export type { TooltipContentStyleProps, TooltipPlacement, TooltipSize };

@@ -41,13 +41,12 @@ const meta = {
   },
 } satisfies Meta<typeof Text>;
 
-export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+const Default: Story = {};
 
-export const SemanticVariants: Story = {
+const SemanticVariants: Story = {
   render: () => (
     <div className="flex flex-col gap-3">
       <Text as="p">Parágrafo</Text>
@@ -65,7 +64,7 @@ export const SemanticVariants: Story = {
   ),
 };
 
-export const Tones: Story = {
+const Tones: Story = {
   render: () => (
     <div className="flex flex-col gap-2">
       <Text tone="primary">Primary</Text>
@@ -78,7 +77,7 @@ export const Tones: Story = {
   ),
 };
 
-export const Sizes: Story = {
+const Sizes: Story = {
   render: () => (
     <div className="flex flex-col gap-2">
       <Text size="xs">Extra small</Text>
@@ -90,7 +89,7 @@ export const Sizes: Story = {
   ),
 };
 
-export const Truncated: Story = {
+const Truncated: Story = {
   render: () => (
     <div className="w-56">
       <Text truncate>
@@ -100,10 +99,13 @@ export const Truncated: Story = {
   ),
 };
 
-export const Inverse: Story = {
+const Inverse: Story = {
   render: () => (
     <div className="rounded-md bg-fill-inverse-default p-4">
       <Text tone="inverse">Texto inverso</Text>
     </div>
   ),
 };
+
+export default meta;
+export { Default, SemanticVariants, Tones, Sizes, Truncated, Inverse };

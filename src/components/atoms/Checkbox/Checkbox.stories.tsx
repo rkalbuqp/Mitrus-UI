@@ -24,48 +24,47 @@ const meta = {
   },
 } satisfies Meta<typeof Checkbox>;
 
-export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+const Default: Story = {};
 
-export const Checked: Story = {
+const Checked: Story = {
   args: {
     children: "Receber comunicados",
     defaultChecked: true,
   },
 };
 
-export const WithDescription: Story = {
+const WithDescription: Story = {
   args: {
     children: "Newsletter",
     description: "Quero receber atualizações e novidades no meu e-mail.",
   },
 };
 
-export const Disabled: Story = {
+const Disabled: Story = {
   args: {
     children: "Opção desabilitada",
     disabled: true,
   },
 };
 
-export const Invalid: Story = {
+const Invalid: Story = {
   args: {
     children: "Campo obrigatório",
     invalid: true,
   },
 };
 
-export const Indeterminate: Story = {
+const Indeterminate: Story = {
   args: {
     children: "Selecionar grupo",
     indeterminate: true,
   },
 };
 
-export const Sizes: Story = {
+const Sizes: Story = {
   render: () => (
     <div className="flex flex-col gap-4">
       <Checkbox size="sm">Small</Checkbox>
@@ -74,3 +73,6 @@ export const Sizes: Story = {
     </div>
   ),
 };
+
+export default meta;
+export { Default, Checked, WithDescription, Disabled, Invalid, Indeterminate, Sizes };

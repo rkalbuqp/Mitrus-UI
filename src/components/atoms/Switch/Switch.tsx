@@ -11,7 +11,7 @@ import {
   type SwitchSize,
 } from "./Switch.styles";
 
-export interface SwitchProps
+interface SwitchProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "children" | "className" | "size" | "type"> {
   children?: ReactNode;
   description?: ReactNode;
@@ -86,5 +86,7 @@ const Switch = ({
   );
 };
 
-export default Switch;
 export type { SwitchSize };
+
+export default Switch;
+export type { SwitchProps };

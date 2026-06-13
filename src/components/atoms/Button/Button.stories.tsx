@@ -43,55 +43,54 @@ const meta = {
   },
 } satisfies Meta<typeof Button>;
 
-export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {};
+const Primary: Story = {};
 
-export const Secondary: Story = {
+const Secondary: Story = {
   args: {
     variant: "secondary",
     children: "Secondary",
   },
 };
 
-export const Outline: Story = {
+const Outline: Story = {
   args: {
     variant: "outline",
     children: "Outline",
   },
 };
 
-export const Ghost: Story = {
+const Ghost: Story = {
   args: {
     variant: "ghost",
     children: "Ghost",
   },
 };
 
-export const Link: Story = {
+const Link: Story = {
   args: {
     variant: "link",
     children: "Link",
   },
 };
 
-export const Danger: Story = {
+const Danger: Story = {
   args: {
     variant: "danger",
     children: "Delete",
   },
 };
 
-export const Success: Story = {
+const Success: Story = {
   args: {
     variant: "success",
     children: "Success",
   },
 };
 
-export const Sizes: Story = {
+const Sizes: Story = {
   render: () => (
     <div className="flex flex-wrap items-center gap-4">
       <Button size="xs">Extra Small</Button>
@@ -103,21 +102,21 @@ export const Sizes: Story = {
   ),
 };
 
-export const Loading: Story = {
+const Loading: Story = {
   args: {
     loading: true,
     children: "Loading",
   },
 };
 
-export const Disabled: Story = {
+const Disabled: Story = {
   args: {
     disabled: true,
     children: "Disabled",
   },
 };
 
-export const WithIcons: Story = {
+const WithIcons: Story = {
   args: {
     children: "Continue",
     leftIcon: <Icon name="arrow_back" />,
@@ -125,7 +124,7 @@ export const WithIcons: Story = {
   },
 };
 
-export const FullWidth: Story = {
+const FullWidth: Story = {
   args: {
     fullWidth: true,
     children: "Full Width",
@@ -137,21 +136,21 @@ export const FullWidth: Story = {
   ),
 };
 
-export const Rounded: Story = {
+const Rounded: Story = {
   args: {
     rounded: true,
     children: "Rounded",
   },
 };
 
-export const Pressed: Story = {
+const Pressed: Story = {
   args: {
     pressed: true,
     children: "Pressed",
   },
 };
 
-export const IconOnly: Story = {
+const IconOnly: Story = {
   args: {
     size: "icon",
     children: <span className="sr-only">Add item</span>,
@@ -159,3 +158,6 @@ export const IconOnly: Story = {
     "aria-label": "Add item",
   },
 };
+
+export default meta;
+export { Primary, Secondary, Outline, Ghost, Link, Danger, Success, Sizes, Loading, Disabled, WithIcons, FullWidth, Rounded, Pressed, IconOnly };

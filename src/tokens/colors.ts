@@ -1,6 +1,6 @@
 const cssVar = (name: string) => `var(${name})`;
 
-export const primitiveColors = {
+const primitiveColors = {
   white: "#ffffff",
   black: "#000000",
   gray: {
@@ -75,7 +75,7 @@ export const primitiveColors = {
   },
 } as const;
 
-export const alphaColors = {
+const alphaColors = {
   black: {
     "04": "#000000a3",
     "12": "#0000001f",
@@ -94,7 +94,7 @@ export const alphaColors = {
   },
 } as const;
 
-export const semanticColors = {
+const semanticColors = {
   background: {
     primary: cssVar("--background-primary"),
     secondary: cssVar("--background-secondary"),
@@ -232,10 +232,13 @@ export const semanticColors = {
   },
 } as const;
 
-export const colors = {
+const colors = {
   primitive: primitiveColors,
   alpha: alphaColors,
   semantic: semanticColors,
 } as const;
 
-export type Colors = typeof colors;
+type Colors = typeof colors;
+
+export { primitiveColors, alphaColors, semanticColors, colors };
+export type { Colors };

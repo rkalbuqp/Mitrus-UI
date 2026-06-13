@@ -25,7 +25,7 @@ const getInitials = (name?: string) => {
   return parts.map((part) => part[0]).join("").toUpperCase();
 };
 
-export interface AvatarProps extends HTMLAttributes<HTMLDivElement> {
+interface AvatarProps extends HTMLAttributes<HTMLDivElement> {
   src?: string;
   alt?: string;
   name?: string;
@@ -80,5 +80,7 @@ const Avatar = ({
   );
 };
 
-export default Avatar;
 export type { AvatarShape, AvatarSize, AvatarStatus };
+
+export default Avatar;
+export type { AvatarProps };
