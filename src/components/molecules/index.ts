@@ -8,3 +8,5 @@ export { default as FormField } from "./Formulary/FormField";
 export type { FormFieldProps, FormFieldRenderProps } from "./Formulary/FormField";
 export { default as PasswordField } from "./Formulary/PasswordField";
 export type { PasswordFieldProps, PasswordFieldSize } from "./Formulary/PasswordField";
+export { default as PhoneField } from "./Formulary/PhoneField";
+export type { PhoneFieldCountry, PhoneFieldProps, PhoneFieldSize, PhoneFieldValueChangeMeta } from "./Formulary/PhoneField";
