@@ -48,3 +48,9 @@ export const Disabled: Story = {
     disabled: true,
   },
 };
+
+export const WithAdornment: Story = {
+  args: {
+    endAdornment: <button type="button">OK</button>,
+  },
+};

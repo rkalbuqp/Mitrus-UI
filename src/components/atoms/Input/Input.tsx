@@ -2,6 +2,8 @@ import { useId, type InputHTMLAttributes, type ReactNode } from "react";
 
 import { cn } from "../../../utils/cn";
 import {
+  inputAdornmentStyles,
+  inputControlStyles,
   inputDescriptionStyles,
   inputFieldStyles,
   inputLabelStyles,
@@ -18,6 +20,8 @@ export interface InputProps
   fullWidth?: boolean;
   className?: string;
   inputClassName?: string;
+  endAdornment?: ReactNode;
+  endAdornmentClassName?: string;
   descriptionClassName?: string;
 }
 
@@ -29,6 +33,8 @@ const Input = ({
   fullWidth = false,
   className,
   inputClassName,
+  endAdornment,
+  endAdornmentClassName,
   descriptionClassName,
   id,
   disabled = false,
@@ -51,23 +57,30 @@ const Input = ({
         </label>
       ) : null}
 
-      <input
-        {...props}
-        aria-describedby={mergedDescription}
-        aria-invalid={invalid || undefined}
-        aria-labelledby={ariaLabelledBy ?? labelId}
-        className={cn(
-          inputFieldStyles({
-            size,
-            invalid,
-            fullWidth,
-          }),
-          inputClassName,
-        )}
-        disabled={disabled}
-        id={inputId}
-        type={type}
-      />
+      <div className={inputControlStyles()}>
+        <input
+          {...props}
+          aria-describedby={mergedDescription}
+          aria-invalid={invalid || undefined}
+          aria-labelledby={ariaLabelledBy ?? labelId}
+          className={cn(
+            inputFieldStyles({
+              size,
+              invalid,
+              fullWidth,
+              hasEndAdornment: Boolean(endAdornment),
+            }),
+            inputClassName,
+          )}
+          disabled={disabled}
+          id={inputId}
+          type={type}
+        />
+
+        {endAdornment ? (
+          <span className={cn(inputAdornmentStyles({ size }), endAdornmentClassName)}>{endAdornment}</span>
+        ) : null}
+      </div>
 
       {description ? (
         <span className={cn(inputDescriptionStyles({ size }), descriptionClassName)} id={descriptionId}>

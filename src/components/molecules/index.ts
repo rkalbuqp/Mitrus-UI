@@ -6,3 +6,5 @@ export { default as EmailField } from "./Formulary/EmailField";
 export type { EmailFieldProps, EmailFieldSize } from "./Formulary/EmailField";
 export { default as FormField } from "./Formulary/FormField";
 export type { FormFieldProps, FormFieldRenderProps } from "./Formulary/FormField";
+export { default as PasswordField } from "./Formulary/PasswordField";
+export type { PasswordFieldProps, PasswordFieldSize } from "./Formulary/PasswordField";

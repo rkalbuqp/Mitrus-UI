@@ -2,6 +2,8 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 export const inputRootStyles = cva("inline-flex min-w-0 flex-col gap-1.5");
 
+export const inputControlStyles = cva("relative inline-flex min-w-0 items-center");
+
 export const inputFieldStyles = cva(
   [
     "rounded-md border bg-background-primary text-content-neutral-primary",
@@ -27,11 +29,32 @@ export const inputFieldStyles = cva(
         true: "w-full",
         false: "w-auto",
       },
+      hasEndAdornment: {
+        true: "pr-12",
+        false: "",
+      },
     },
     defaultVariants: {
       size: "md",
       invalid: false,
       fullWidth: false,
+      hasEndAdornment: false,
+    },
+  },
+);
+
+export const inputAdornmentStyles = cva(
+  "absolute right-2 inline-flex items-center justify-center",
+  {
+    variants: {
+      size: {
+        sm: "h-7",
+        md: "h-8",
+        lg: "h-9",
+      },
+    },
+    defaultVariants: {
+      size: "md",
     },
   },
 );

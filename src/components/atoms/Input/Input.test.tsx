@@ -44,4 +44,11 @@ describe("Input", () => {
 
     expect(screen.getByRole("textbox", { name: "Telefone" })).toBeDisabled();
   });
+
+  it("renderiza um adorno à direita quando informado", () => {
+    render(<Input endAdornment={<button type="button">Acao</button>} label="Busca" />);
+
+    expect(screen.getByRole("button", { name: "Acao" })).toBeInTheDocument();
+    expect(screen.getByRole("textbox", { name: "Busca" }).className).toContain("pr-12");
+  });
 });
