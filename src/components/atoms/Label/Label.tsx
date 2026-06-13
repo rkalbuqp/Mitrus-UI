@@ -3,7 +3,7 @@ import type { LabelHTMLAttributes, ReactNode } from "react";
 import { cn } from "../../../utils/cn";
 import { labelIndicatorStyles, labelStyles, type LabelSize } from "./Label.styles";
 
-export interface LabelProps extends Omit<LabelHTMLAttributes<HTMLLabelElement>, "children" | "className"> {
+interface LabelProps extends Omit<LabelHTMLAttributes<HTMLLabelElement>, "children" | "className"> {
   children: ReactNode;
   size?: LabelSize;
   disabled?: boolean;
@@ -51,5 +51,7 @@ const Label = ({
   </label>
 );
 
-export default Label;
 export type { LabelSize };
+
+export default Label;
+export type { LabelProps };

@@ -1,6 +1,6 @@
 import { cva, type VariantProps } from "class-variance-authority";
 
-export const labelStyles = cva(
+const labelStyles = cva(
   [
     "inline-flex w-fit items-center gap-1.5",
     "font-medium text-content-neutral-primary",
@@ -30,7 +30,7 @@ export const labelStyles = cva(
   },
 );
 
-export const labelIndicatorStyles = cva("text-content-neutral-secondary", {
+const labelIndicatorStyles = cva("text-content-neutral-secondary", {
   variants: {
     tone: {
       required: "text-content-critical",
@@ -42,5 +42,8 @@ export const labelIndicatorStyles = cva("text-content-neutral-secondary", {
   },
 });
 
-export type LabelStyleProps = VariantProps<typeof labelStyles>;
-export type LabelSize = NonNullable<LabelStyleProps["size"]>;
+type LabelStyleProps = VariantProps<typeof labelStyles>;
+type LabelSize = NonNullable<LabelStyleProps["size"]>;
+
+export { labelStyles, labelIndicatorStyles };
+export type { LabelStyleProps, LabelSize };

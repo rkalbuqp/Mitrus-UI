@@ -5,7 +5,7 @@ import type { CSSProperties, HTMLAttributes } from "react";
 import { cn } from "../../../utils/cn";
 import { iconStyles, type IconSize, type IconVariant } from "./Icon.styles";
 
-export interface IconProps extends HTMLAttributes<HTMLSpanElement> {
+interface IconProps extends HTMLAttributes<HTMLSpanElement> {
   name: string;
   size?: IconSize;
   variant?: IconVariant;
@@ -40,5 +40,7 @@ const Icon = ({
   );
 };
 
-export default Icon;
 export type { IconSize, IconVariant };
+
+export default Icon;
+export type { IconProps };

@@ -11,7 +11,7 @@ import {
   type ImageSize,
 } from "./Image.styles";
 
-export interface ImageProps
+interface ImageProps
   extends Omit<ImgHTMLAttributes<HTMLImageElement>, "className" | "src" | "alt" | "children"> {
   src: string;
   alt: string;
@@ -73,5 +73,7 @@ const Image = ({
   );
 };
 
-export default Image;
 export type { ImageFit, ImageRatio, ImageRounded, ImageSize };
+
+export default Image;
+export type { ImageProps };

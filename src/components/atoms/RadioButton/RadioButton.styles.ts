@@ -1,6 +1,6 @@
 import { cva, type VariantProps } from "class-variance-authority";
 
-export const radioButtonRootStyles = cva("inline-flex w-fit select-none items-start gap-3", {
+const radioButtonRootStyles = cva("inline-flex w-fit select-none items-start gap-3", {
   variants: {
     disabled: {
       true: "cursor-not-allowed opacity-60",
@@ -12,9 +12,9 @@ export const radioButtonRootStyles = cva("inline-flex w-fit select-none items-st
   },
 });
 
-export const radioButtonInputStyles = cva("peer sr-only");
+const radioButtonInputStyles = cva("peer sr-only");
 
-export const radioButtonControlStyles = cva(
+const radioButtonControlStyles = cva(
   [
     "relative mt-0.5 inline-flex shrink-0 items-center justify-center rounded-full border bg-background-primary",
     "transition-colors duration-200",
@@ -42,7 +42,7 @@ export const radioButtonControlStyles = cva(
   },
 );
 
-export const radioButtonDotStyles = cva(
+const radioButtonDotStyles = cva(
   [
     "rounded-full bg-fill-accent-primary-default opacity-0 transition-opacity duration-200",
     "peer-checked:opacity-100",
@@ -61,7 +61,7 @@ export const radioButtonDotStyles = cva(
   },
 );
 
-export const radioButtonLabelStyles = cva("font-medium text-content-neutral-primary", {
+const radioButtonLabelStyles = cva("font-medium text-content-neutral-primary", {
   variants: {
     size: {
       sm: "text-087 leading-125",
@@ -74,7 +74,7 @@ export const radioButtonLabelStyles = cva("font-medium text-content-neutral-prim
   },
 });
 
-export const radioButtonDescriptionStyles = cva("text-content-neutral-secondary", {
+const radioButtonDescriptionStyles = cva("text-content-neutral-secondary", {
   variants: {
     size: {
       sm: "text-075 leading-125",
@@ -87,5 +87,8 @@ export const radioButtonDescriptionStyles = cva("text-content-neutral-secondary"
   },
 });
 
-export type RadioButtonStyleProps = VariantProps<typeof radioButtonControlStyles>;
-export type RadioButtonSize = NonNullable<RadioButtonStyleProps["size"]>;
+type RadioButtonStyleProps = VariantProps<typeof radioButtonControlStyles>;
+type RadioButtonSize = NonNullable<RadioButtonStyleProps["size"]>;
+
+export { radioButtonRootStyles, radioButtonInputStyles, radioButtonControlStyles, radioButtonDotStyles, radioButtonLabelStyles, radioButtonDescriptionStyles };
+export type { RadioButtonStyleProps, RadioButtonSize };

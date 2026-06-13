@@ -1,6 +1,6 @@
 import { cva, type VariantProps } from "class-variance-authority";
 
-export const badgeStyles = cva(
+const badgeStyles = cva(
   [
     "inline-flex items-center justify-center gap-1.5",
     "whitespace-nowrap align-middle",
@@ -132,7 +132,7 @@ export const badgeStyles = cva(
   },
 );
 
-export const badgeDotStyles = cva("inline-flex shrink-0 rounded-full", {
+const badgeDotStyles = cva("inline-flex shrink-0 rounded-full", {
   variants: {
     variant: {
       neutral: "bg-fill-neutral-selected",
@@ -154,7 +154,10 @@ export const badgeDotStyles = cva("inline-flex shrink-0 rounded-full", {
   },
 });
 
-export type BadgeStyleProps = VariantProps<typeof badgeStyles>;
-export type BadgeVariant = NonNullable<BadgeStyleProps["variant"]>;
-export type BadgeAppearance = NonNullable<BadgeStyleProps["appearance"]>;
-export type BadgeSize = NonNullable<BadgeStyleProps["size"]>;
+type BadgeStyleProps = VariantProps<typeof badgeStyles>;
+type BadgeVariant = NonNullable<BadgeStyleProps["variant"]>;
+type BadgeAppearance = NonNullable<BadgeStyleProps["appearance"]>;
+type BadgeSize = NonNullable<BadgeStyleProps["size"]>;
+
+export { badgeStyles, badgeDotStyles };
+export type { BadgeStyleProps, BadgeVariant, BadgeAppearance, BadgeSize };

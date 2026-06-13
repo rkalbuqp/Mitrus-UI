@@ -16,11 +16,17 @@ export type { IconProps, IconSize, IconVariant } from "./Icon";
 export { default as Image } from "./Image";
 export type { ImageFit, ImageProps, ImageRatio, ImageRounded, ImageSize } from "./Image";
 
+export { default as Input } from "./Input";
+export type { InputProps, InputSize } from "./Input";
+
 export { default as Label } from "./Label";
 export type { LabelProps, LabelSize } from "./Label";
 
 export { default as Link } from "./Link";
 export type { LinkProps, LinkSize, LinkUnderline, LinkVariant } from "./Link";
+
+export { default as ListItem } from "./ListItem";
+export type { ListItemProps } from "./ListItem";
 
 export { default as RadioButton } from "./RadioButton";
 export type { RadioButtonProps, RadioButtonSize } from "./RadioButton";
@@ -30,6 +36,9 @@ export type { SelectOption, SelectProps, SelectSize } from "./Select";
 
 export { default as Skeleton } from "./Skeleton";
 export type { SkeletonProps, SkeletonSize, SkeletonVariant } from "./Skeleton";
+
+export { default as Span } from "./Span";
+export type { SpanProps } from "./Span";
 
 export { default as Switch } from "./Switch";
 export type { SwitchProps, SwitchSize } from "./Switch";

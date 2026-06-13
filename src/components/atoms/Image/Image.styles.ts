@@ -1,6 +1,6 @@
 import { cva, type VariantProps } from "class-variance-authority";
 
-export const imageFigureStyles = cva("inline-flex min-w-0 flex-col gap-2", {
+const imageFigureStyles = cva("inline-flex min-w-0 flex-col gap-2", {
   variants: {
     fullWidth: {
       true: "w-full",
@@ -12,7 +12,7 @@ export const imageFigureStyles = cva("inline-flex min-w-0 flex-col gap-2", {
   },
 });
 
-export const imageStyles = cva(
+const imageStyles = cva(
   [
     "block max-w-full bg-surface-neutral-secondary",
     "transition-colors duration-200",
@@ -66,7 +66,7 @@ export const imageStyles = cva(
   },
 );
 
-export const imageCaptionStyles = cva("text-content-neutral-secondary", {
+const imageCaptionStyles = cva("text-content-neutral-secondary", {
   variants: {
     size: {
       sm: "text-075 leading-125",
@@ -80,8 +80,11 @@ export const imageCaptionStyles = cva("text-content-neutral-secondary", {
   },
 });
 
-export type ImageStyleProps = VariantProps<typeof imageStyles>;
-export type ImageSize = NonNullable<ImageStyleProps["size"]>;
-export type ImageRatio = NonNullable<ImageStyleProps["ratio"]>;
-export type ImageFit = NonNullable<ImageStyleProps["fit"]>;
-export type ImageRounded = NonNullable<ImageStyleProps["rounded"]>;
+type ImageStyleProps = VariantProps<typeof imageStyles>;
+type ImageSize = NonNullable<ImageStyleProps["size"]>;
+type ImageRatio = NonNullable<ImageStyleProps["ratio"]>;
+type ImageFit = NonNullable<ImageStyleProps["fit"]>;
+type ImageRounded = NonNullable<ImageStyleProps["rounded"]>;
+
+export { imageFigureStyles, imageStyles, imageCaptionStyles };
+export type { ImageStyleProps, ImageSize, ImageRatio, ImageFit, ImageRounded };

@@ -36,20 +36,19 @@ const meta = {
   },
 } satisfies Meta<typeof Link>;
 
-export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+const Default: Story = {};
 
-export const Neutral: Story = {
+const Neutral: Story = {
   args: {
     children: "Ver detalhes",
     variant: "neutral",
   },
 };
 
-export const WithIcons: Story = {
+const WithIcons: Story = {
   args: {
     children: "Abrir recurso",
     leftIcon: <Icon name="link" />,
@@ -57,14 +56,14 @@ export const WithIcons: Story = {
   },
 };
 
-export const UnderlineAlways: Story = {
+const UnderlineAlways: Story = {
   args: {
     children: "Ler documentação",
     underline: "always",
   },
 };
 
-export const Sizes: Story = {
+const Sizes: Story = {
   render: () => (
     <div className="flex flex-col gap-3">
       <Link href="#" size="sm">
@@ -80,7 +79,7 @@ export const Sizes: Story = {
   ),
 };
 
-export const Inverse: Story = {
+const Inverse: Story = {
   render: () => (
     <div className="inline-flex rounded-md bg-fill-inverse-default p-4">
       <Link href="#" variant="inverse">
@@ -89,3 +88,6 @@ export const Inverse: Story = {
     </div>
   ),
 };
+
+export default meta;
+export { Default, Neutral, WithIcons, UnderlineAlways, Sizes, Inverse };

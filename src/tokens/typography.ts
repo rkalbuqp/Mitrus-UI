@@ -1,17 +1,17 @@
 const cssVar = (name: string) => `var(${name})`;
 
-export const fontFamilies = {
+const fontFamilies = {
   sans: '"Inter", sans-serif',
   display01: cssVar("--font-family-display-01"),
 } as const;
 
-export const fontWeights = {
+const fontWeights = {
   regular: 400,
   medium: 500,
   semibold: 600,
 } as const;
 
-export const fontSizes = {
+const fontSizes = {
   "0625": "0.625rem",
   "075": "0.75rem",
   "087": "0.875rem",
@@ -26,7 +26,7 @@ export const fontSizes = {
   "500": "5rem",
 } as const;
 
-export const lineHeights = {
+const lineHeights = {
   "100": 1,
   "125": 1.25,
   "150": 1.5,
@@ -39,7 +39,7 @@ export const lineHeights = {
   "500": 5,
 } as const;
 
-export const typographyColors = {
+const typographyColors = {
   primary: cssVar("--color-fill-primary"),
   secondary: cssVar("--color-fill-secondary"),
   tertiary: cssVar("--color-fill-tertiary"),
@@ -50,12 +50,12 @@ export const typographyColors = {
   inverse: cssVar("--color-fill-inverse"),
 } as const;
 
-export const effects = {
+const effects = {
   blur100: "8px",
   luminosityModerate: "rgb(0 0 0 / 0.12)",
 } as const;
 
-export const typography = {
+const typography = {
   fontFamilies,
   fontWeights,
   fontSizes,
@@ -64,4 +64,7 @@ export const typography = {
   effects,
 } as const;
 
-export type Typography = typeof typography;
+type Typography = typeof typography;
+
+export { fontFamilies, fontWeights, fontSizes, lineHeights, typographyColors, effects, typography };
+export type { Typography };

@@ -25,33 +25,32 @@ const meta = {
   },
 } satisfies Meta<typeof Skeleton>;
 
-export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+const Default: Story = {};
 
-export const Rectangle: Story = {
+const Rectangle: Story = {
   args: {
     variant: "rectangle",
     size: "lg",
   },
 };
 
-export const Circle: Story = {
+const Circle: Story = {
   args: {
     variant: "circle",
     size: "md",
   },
 };
 
-export const WithoutAnimation: Story = {
+const WithoutAnimation: Story = {
   args: {
     animated: false,
   },
 };
 
-export const FullWidth: Story = {
+const FullWidth: Story = {
   args: {
     fullWidth: true,
     width: "100%",
@@ -63,7 +62,7 @@ export const FullWidth: Story = {
   ),
 };
 
-export const ContentPreview: Story = {
+const ContentPreview: Story = {
   render: () => (
     <div className="flex max-w-sm flex-col gap-3">
       <Skeleton variant="rectangle" width={320} height={180} />
@@ -79,3 +78,6 @@ export const ContentPreview: Story = {
     </div>
   ),
 };
+
+export default meta;
+export { Default, Rectangle, Circle, WithoutAnimation, FullWidth, ContentPreview };

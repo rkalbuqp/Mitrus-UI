@@ -74,5 +74,6 @@ const Text = <T extends ElementType = "p">({
   );
 };
 
-export default Text;
 export type { TextAlign, TextSize, TextTone, TextWeight };
+
+export default Text;

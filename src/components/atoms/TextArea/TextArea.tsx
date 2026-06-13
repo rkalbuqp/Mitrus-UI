@@ -10,7 +10,7 @@ import {
   type TextAreaSize,
 } from "./TextArea.styles";
 
-export interface TextAreaProps
+interface TextAreaProps
   extends Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, "children" | "className"> {
   label?: ReactNode;
   description?: ReactNode;
@@ -80,5 +80,7 @@ const TextArea = ({
   );
 };
 
-export default TextArea;
 export type { TextAreaResize, TextAreaSize };
+
+export default TextArea;
+export type { TextAreaProps };

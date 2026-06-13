@@ -1,6 +1,6 @@
 import { cva, type VariantProps } from "class-variance-authority";
 
-export const switchRootStyles = cva("inline-flex w-fit select-none items-start gap-3", {
+const switchRootStyles = cva("inline-flex w-fit select-none items-start gap-3", {
   variants: {
     disabled: {
       true: "cursor-not-allowed opacity-60",
@@ -12,9 +12,9 @@ export const switchRootStyles = cva("inline-flex w-fit select-none items-start g
   },
 });
 
-export const switchInputStyles = cva("peer sr-only");
+const switchInputStyles = cva("peer sr-only");
 
-export const switchControlStyles = cva(
+const switchControlStyles = cva(
   [
     "relative inline-flex shrink-0 rounded-full border border-transparent",
     "bg-fill-neutral-selected transition-colors duration-200",
@@ -41,7 +41,7 @@ export const switchControlStyles = cva(
   },
 );
 
-export const switchThumbStyles = cva(
+const switchThumbStyles = cva(
   [
     "absolute left-0.5 top-0.5 rounded-full bg-background-primary shadow-sm",
     "transition-transform duration-200",
@@ -60,7 +60,7 @@ export const switchThumbStyles = cva(
   },
 );
 
-export const switchLabelStyles = cva("font-medium text-content-neutral-primary", {
+const switchLabelStyles = cva("font-medium text-content-neutral-primary", {
   variants: {
     size: {
       sm: "text-087 leading-125",
@@ -73,7 +73,7 @@ export const switchLabelStyles = cva("font-medium text-content-neutral-primary",
   },
 });
 
-export const switchDescriptionStyles = cva("text-content-neutral-secondary", {
+const switchDescriptionStyles = cva("text-content-neutral-secondary", {
   variants: {
     size: {
       sm: "text-075 leading-125",
@@ -86,5 +86,8 @@ export const switchDescriptionStyles = cva("text-content-neutral-secondary", {
   },
 });
 
-export type SwitchStyleProps = VariantProps<typeof switchControlStyles>;
-export type SwitchSize = NonNullable<SwitchStyleProps["size"]>;
+type SwitchStyleProps = VariantProps<typeof switchControlStyles>;
+type SwitchSize = NonNullable<SwitchStyleProps["size"]>;
+
+export { switchRootStyles, switchInputStyles, switchControlStyles, switchThumbStyles, switchLabelStyles, switchDescriptionStyles };
+export type { SwitchStyleProps, SwitchSize };
