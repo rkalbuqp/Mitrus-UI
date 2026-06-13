@@ -16,6 +16,9 @@ export type { IconProps, IconSize, IconVariant } from "./Icon";
 export { default as Image } from "./Image";
 export type { ImageFit, ImageProps, ImageRatio, ImageRounded, ImageSize } from "./Image";
 
+export { default as Input } from "./Input";
+export type { InputProps, InputSize } from "./Input";
+
 export { default as Label } from "./Label";
 export type { LabelProps, LabelSize } from "./Label";
 

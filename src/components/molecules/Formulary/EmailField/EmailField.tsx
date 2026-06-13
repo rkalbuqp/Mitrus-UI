@@ -2,9 +2,9 @@ import { useId, type InputHTMLAttributes, type ReactNode } from "react";
 
 import { Input, Label, Text, type InputSize } from "../../../atoms";
 import { cn } from "../../../../utils/cn";
-import { dateFieldMessageStyles, dateFieldRootStyles } from "./DateField.styles";
+import { emailFieldMessageStyles, emailFieldRootStyles } from "./EmailField.styles";
 
-export interface DateFieldProps
+export interface EmailFieldProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "children" | "className" | "size" | "type"> {
   label?: ReactNode;
   description?: ReactNode;
@@ -20,7 +20,7 @@ export interface DateFieldProps
   messageClassName?: string;
 }
 
-const DateField = ({
+const EmailField = ({
   label,
   description,
   errorMessage,
@@ -36,10 +36,12 @@ const DateField = ({
   id,
   disabled = false,
   required = false,
+  autoComplete = "email",
+  inputMode = "email",
   "aria-describedby": ariaDescribedBy,
   "aria-labelledby": ariaLabelledBy,
   ...props
-}: DateFieldProps) => {
+}: EmailFieldProps) => {
   const generatedId = useId();
   const inputId = id ?? generatedId;
   const labelId = label ? `${inputId}-label` : undefined;
@@ -68,7 +70,7 @@ const DateField = ({
 
     return (
       <Text
-        className={cn(dateFieldMessageStyles({ size, tone: "neutral" }), messageClassName)}
+        className={cn(emailFieldMessageStyles({ size, tone: "neutral" }), messageClassName)}
         id={descriptionId}
         size={size === "sm" ? "xs" : "sm"}
         tone="secondary"
@@ -79,7 +81,7 @@ const DateField = ({
   };
 
   return (
-    <div className={cn(dateFieldRootStyles(), className)}>
+    <div className={cn(emailFieldRootStyles(), className)}>
       {label ? (
         <Label
           disabled={disabled}
@@ -100,17 +102,19 @@ const DateField = ({
         aria-describedby={mergedDescription}
         aria-invalid={invalid || undefined}
         aria-labelledby={ariaLabelledBy ?? labelId}
+        autoComplete={autoComplete}
         disabled={disabled}
         className="gap-0"
-        description={undefined}
-        fullWidth={fullWidth}
         id={inputId}
         inputClassName={inputClassName}
+        inputMode={inputMode}
         invalid={invalid}
         label={undefined}
+        description={undefined}
+        fullWidth={fullWidth}
         required={required}
         size={size}
-        type="date"
+        type="email"
       />
 
       {renderMessage()}
@@ -118,5 +122,5 @@ const DateField = ({
   );
 };
 
-export default DateField;
-export type DateFieldSize = InputSize;
+export default EmailField;
+export type EmailFieldSize = InputSize;
