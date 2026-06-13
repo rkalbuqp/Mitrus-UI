@@ -25,6 +25,9 @@ export type { LabelProps, LabelSize } from "./Label";
 export { default as Link } from "./Link";
 export type { LinkProps, LinkSize, LinkUnderline, LinkVariant } from "./Link";
 
+export { default as ListItem } from "./ListItem";
+export type { ListItemProps } from "./ListItem";
+
 export { default as RadioButton } from "./RadioButton";
 export type { RadioButtonProps, RadioButtonSize } from "./RadioButton";
 
