@@ -34,6 +34,9 @@ export type { SelectOption, SelectProps, SelectSize } from "./Select";
 export { default as Skeleton } from "./Skeleton";
 export type { SkeletonProps, SkeletonSize, SkeletonVariant } from "./Skeleton";
 
+export { default as Span } from "./Span";
+export type { SpanProps } from "./Span";
+
 export { default as Switch } from "./Switch";
 export type { SwitchProps, SwitchSize } from "./Switch";
 

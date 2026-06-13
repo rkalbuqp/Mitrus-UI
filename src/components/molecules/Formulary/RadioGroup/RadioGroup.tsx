@@ -1,6 +1,6 @@
 import { useId, useState, type FieldsetHTMLAttributes, type ReactNode } from "react";
 
-import { RadioButton, Text, type RadioButtonSize } from "../../../atoms";
+import { RadioButton, Span, Text, type RadioButtonSize } from "../../../atoms";
 import { cn } from "../../../../utils/cn";
 import {
   radioGroupItemsStyles,
@@ -136,12 +136,12 @@ const RadioGroup = ({
         >
           {label}
           {required ? (
-            <span aria-hidden="true" className={radioGroupLegendIndicatorStyles({ tone: "required" })}>
+            <Span aria-hidden="true" className={radioGroupLegendIndicatorStyles({ tone: "required" })}>
               *
-            </span>
+            </Span>
           ) : null}
           {!required && optional ? (
-            <span className={radioGroupLegendIndicatorStyles({ tone: "optional" })}>{optionalText}</span>
+            <Span className={radioGroupLegendIndicatorStyles({ tone: "optional" })}>{optionalText}</Span>
           ) : null}
         </Text>
       ) : null}
