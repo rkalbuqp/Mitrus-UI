@@ -8,7 +8,7 @@ const meta = {
   tags: ["autodocs"],
   args: {
     label: "E-mail",
-    description: "Informe um e-mail valido para contato.",
+    description: "Informe um e-mail valido para contato com @ obrigatorio.",
     placeholder: "nome@empresa.com",
     size: "md",
     disabled: false,

@@ -38,6 +38,7 @@ const EmailField = ({
   required = false,
   autoComplete = "email",
   inputMode = "email",
+  pattern = ".*@.*",
   "aria-describedby": ariaDescribedBy,
   "aria-labelledby": ariaLabelledBy,
   ...props
@@ -112,6 +113,7 @@ const EmailField = ({
         label={undefined}
         description={undefined}
         fullWidth={fullWidth}
+        pattern={pattern}
         required={required}
         size={size}
         type="email"
