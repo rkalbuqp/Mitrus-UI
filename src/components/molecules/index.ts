@@ -41,3 +41,5 @@ export type {
   QuantitySelectorSize,
   QuantitySelectorValueChangeMeta,
 } from "./Formulary/QuantitySelector";
+export { default as SearchBar } from "./Search/SearchBar";
+export type { SearchBarProps, SearchBarSize, SearchBarSubmitMeta } from "./Search/SearchBar";
