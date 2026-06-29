@@ -45,3 +45,5 @@ export { default as SearchBar } from "./Search/SearchBar";
 export type { SearchBarProps, SearchBarSize, SearchBarSubmitMeta } from "./Search/SearchBar";
 export { default as SearchFilter } from "./Search/SearchFilter";
 export type { SearchFilterOption, SearchFilterProps, SearchFilterSize } from "./Search/SearchFilter";
+export { default as SearchInput } from "./Search/SearchInput";
+export type { SearchInputProps, SearchInputSize } from "./Search/SearchInput";
